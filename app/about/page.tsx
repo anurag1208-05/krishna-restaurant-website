@@ -41,13 +41,13 @@ const team = [
   {
     name: 'Priya Sharma',
     role: 'Pastry Chef',
-    image: 'https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=500&fit=crop',
     bio: 'Specializing in traditional Indian desserts with a modern twist, creating sweet memories.',
   },
   {
     name: 'Vikram Singh',
     role: 'Tandoor Master',
-    image: 'https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1583394293214-28bbe3e9c3c5?w=400&h=500&fit=crop',
     bio: 'A true artisan of the clay oven, perfecting the art of tandoori cooking for 15 years.',
   },
 ]
