@@ -47,7 +47,7 @@ const team = [
   {
     name: 'Vikram Singh',
     role: 'Tandoor Master',
-    image: 'https://images.unsplash.com/photo-1583394293214-28ez5e9c3c59?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=400&h=500&fit=crop',
     bio: 'A true artisan of the clay oven, perfecting the art of tandoori cooking for 15 years.',
   },
 ]
