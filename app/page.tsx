@@ -7,19 +7,19 @@ const featuredDishes = [
   {
     name: 'Butter Chicken',
     description: 'Tender chicken in rich, creamy tomato sauce with aromatic spices',
-    price: '$18',
+    price: '₹420',
     image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop',
   },
   {
     name: 'Lamb Biryani',
     description: 'Fragrant basmati rice layered with slow-cooked lamb and saffron',
-    price: '$22',
+    price: '₹480',
     image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop',
   },
   {
     name: 'Paneer Tikka',
     description: 'Marinated cottage cheese grilled in traditional tandoor oven',
-    price: '$16',
+    price: '₹360',
     image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&h=400&fit=crop',
   },
 ]
