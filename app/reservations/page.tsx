@@ -25,14 +25,48 @@ export default function ReservationsPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    setSubmitError('')
+
+    try {
+      const response = await fetch('https://krishna-backend-84sp.onrender.com/api/reservations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          date: formData.date,
+          time: formData.time,
+          guests: parseInt(formData.guests),
+          occasion: formData.occasion,
+          specialRequests: formData.specialRequests,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const data = await response.json()
+      console.log('[v0] Reservation submitted successfully:', data)
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error('[v0] Error submitting reservation:', error)
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'An error occurred while submitting your reservation. Please try again.'
+      )
+      setIsSubmitting(false)
+    }
   }
 
   // Get minimum date (today)
@@ -115,6 +149,13 @@ export default function ReservationsPage() {
                   Fill out the form below to reserve your table. For parties larger than 8, please call us directly.
                 </p>
               </div>
+
+              {submitError && (
+                <div className="mb-8 bg-red-50 border border-red-200 rounded-sm p-4 text-red-700">
+                  <p className="font-medium">Error submitting reservation</p>
+                  <p className="text-sm mt-1">{submitError}</p>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Date, Time, Guests Row */}
