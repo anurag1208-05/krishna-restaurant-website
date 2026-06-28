@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/next'
+import ChatBot from "@/components/ChatBot"  // ← bas yeh add karo
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
+        <ChatBot />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
